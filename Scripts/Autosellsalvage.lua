@@ -135,11 +135,11 @@ for _, char in ipairs(chars) do
     elseif _ == 8 then
         cook(512)
     end
+    -- return home
     if char:sub(-homeserverlength) == homeserver then
         yield("/tp free company")
         yield("/wait 10")
     else
-        -- return home
         yield("/lifestream")
         yield("/wait 30")
         yield("/tp free company")
