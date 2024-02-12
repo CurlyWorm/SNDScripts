@@ -1,5 +1,6 @@
 -- Required plugins: Lifestream, Autoretainer, Pandora's box, sortakinda with top left inventory slot set to salvage only, everything in this slot will be sold to vendor
 -- Simpletweaks with the tweaks Estate List Command and fix '/target' command enabled
+-- Apartment also needs the mannequin right inside the door so you can use the confirm button to interact with it
 
 -- Only supports 8 characters because i didn't need any more
 -- going above that will just cause characters to login and then not actually sell anything
