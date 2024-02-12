@@ -28,6 +28,7 @@ chars = {
 --- Nothing below here is meant to be changed
 ---
 -- Start Login
+homeserverlength = string.len(homeserver)
 apartmentnumberfixed = apartmentnumber-1
 FirstRun = 0
 for _, char in ipairs(chars) do
@@ -43,10 +44,10 @@ for _, char in ipairs(chars) do
     end
     FirstRun = 0
     -- World check and tp if omega
-    if char:sub(-8) == "Louisoix" then
+    if char:sub(-homeserverlength) == homeserver then
         -- Do literally nothing
     else
-        yield("/li Louisoix")
+        yield("/li "..homeserver)
         yield("<wait.20.0>")
     end
 
@@ -137,11 +138,12 @@ for _, char in ipairs(chars) do
     elseif _ == 8 then
         cook(512)
     end
-    if char:sub(-8) == "Louisoix" then
+    if char:sub(-homeserverlength) == homeserver then
         yield("/tp free company")
         yield("/wait 10")
     else
-        yield("/li Omega")
+        -- return home
+        yield("/lifestream")
         yield("/wait 30")
         yield("/tp free company")
         yield("/wait 10")
