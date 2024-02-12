@@ -30,19 +30,15 @@ chars = {
 -- Start Login
 homeserverlength = string.len(homeserver)
 apartmentnumberfixed = apartmentnumber-1
-FirstRun = 0
 for _, char in ipairs(chars) do
     if GetCharacterName(true) == char then
         yield("/echo Skipping char select since already on first char")
     else 
-        if FirstRun==0 then
-            yield("/echo "..char)
-            yield("/ays relog " ..char)
-            yield("<wait.45.0>")
-            yield("/waitaddon NamePlate <maxwait.600><wait.5>")
-        end
+        yield("/echo "..char)
+        yield("/ays relog " ..char)
+        yield("<wait.45.0>")
+        yield("/waitaddon NamePlate <maxwait.600><wait.5>")
     end
-    FirstRun = 0
     -- World check and tp if omega
     if char:sub(-homeserverlength) == homeserver then
         -- Do literally nothing
