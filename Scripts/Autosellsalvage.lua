@@ -1,17 +1,16 @@
--- Required plugins: Lifestream, Autoretainer, Pandora's box, sortakinda top left inventory slot set to salvage only, everything in this slot will be sold to vendor
+-- Required plugins: Lifestream, Autoretainer, Pandora's box, sortakinda with top left inventory slot set to salvage only, everything in this slot will be sold to vendor
 -- Simpletweaks with the tweaks Estate List Command and fix '/target' command enabled
 
 -- Only supports 8 characters because i didn't need any more
 -- going above that will just cause characters to login and then not actually sell anything
 
--- Change last number to apartment number -1
+-- Change apartmentnumber to your apartment number
 -- Doesn't support past first page, easy to add but wasn't needed
--- Look between arrows for what exactly to change
--- /pcall MansionSelectRoom false 0 2 false 0 ----> 2 <----
 
-apartmentnumber = "/pcall MansionSelectRoom false 0 2"
-confirmbutton = "/send g"
-estatelist = "/estatelist PersonWhoOwnsTheApartment"
+apartmentnumber = "3"
+homeserver = "Louisoix"
+confirmbutton = "G"
+estateowner = "PersonWhoOwnsTheApartment"
 
 chars = {
     -- remember to remove the comma from the last character if adding/removing
@@ -24,10 +23,13 @@ chars = {
     'Example character@world',
     'Example character@world'
 }
-FirstRun = 0
-
+---
+--- Nothing below here is meant to be changed
+--- Nothing below here is meant to be changed
+---
 -- Start Login
-
+apartmentnumberfixed = apartmentnumber-1
+FirstRun = 0
 for _, char in ipairs(chars) do
     if GetCharacterName(true) == char then
         yield("/echo Skipping char select since already on first char")
@@ -50,7 +52,7 @@ for _, char in ipairs(chars) do
 
     -- Tp to apartment and enter lobby
     yield("/wait 1")
-    yield(estatelist)
+    yield("/estatelist "..estateowner)
     yield("/wait 0.4")
     yield("/pcall TeleportHousingFriend false 2")
     yield("/wait 10")
@@ -59,7 +61,7 @@ for _, char in ipairs(chars) do
     yield("/ac sprint")
     yield("/automove")
     yield("/wait 3")
-    yield(confirmbutton)
+    yield("/send "..confirmbutton)
     yield("/wait 1")
     yield("/pcall SelectString false 1")
     yield("/wait 4")
@@ -72,20 +74,20 @@ for _, char in ipairs(chars) do
     yield("/wait 4")
 
     -- Sell items
-    yield(confirmbutton)
+    yield("/send "..confirmbutton)
     yield("/wait 0.4")
-    yield(confirmbutton)
+    yield("/send "..confirmbutton)
     yield("/wait 1")
     yield("/send i")
     yield("/wait 0.4")
     yield("/send i")
     yield("/wait 0.4")
     for n=1, 8 do
-        yield(confirmbutton)
+        yield("/send "..confirmbutton)
         yield("/wait 0.1")
-        yield(confirmbutton)
+        yield("/send "..confirmbutton)
         yield("/wait 0.1")
-        yield(confirmbutton)
+        yield("/send "..confirmbutton)
         yield("/wait 0.7")
     end
 
@@ -96,19 +98,19 @@ for _, char in ipairs(chars) do
     yield("/lockon")
     yield("/automove")
     yield("/wait 1.5")
-    yield(confirmbutton)
+    yield("/send "..confirmbutton)
     yield("/wait 0.7")
     yield("/pcall SelectString false 0")
     yield("/wait 0.2")
-    yield(apartmentnumber)
+    yield("/pcall MansionSelectRoom false 0 "..apartmentnumberfixed)
     yield("/wait 0.5")
     yield("/pcall SelectYesno false 0")
     yield("/wait 4.0")
     
     -- Buying from apartment mannequin
-    yield(confirmbutton)
+    yield("/send "..confirmbutton)
     yield("/wait 0.5")
-    yield(confirmbutton)
+    yield("/send "..confirmbutton)
     yield("/wait 0.5")
     function cook(item)
         yield("/pcall MerchantShop true 15 "..item)
