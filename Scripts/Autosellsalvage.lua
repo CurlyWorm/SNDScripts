@@ -1,8 +1,8 @@
--- Required plugins: Lifestream, Autoretainer, Pandora's box, sortakinda with 8 slots set to salvage in the top left inventory
+-- Required plugins: Lifestream, Autoretainer, Pandora's box, sortakinda top left inventory slot set to salvage only, everything in this slot will be sold to vendor
 -- Simpletweaks with the tweaks Estate List Command and fix '/target' command enabled
 
 -- Only supports 8 characters because i didn't need any more
--- going above that will probably just end script
+-- going above that will just cause characters to login and then not actually sell anything
 
 -- Change last number to apartment number -1
 -- Doesn't support past first page, easy to add but wasn't needed
