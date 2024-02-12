@@ -1,4 +1,4 @@
--- Required plugins: Lifestream, Autoretainer, Pandora's box, sortakinda and
+-- Required plugins: Lifestream, Autoretainer, Pandora's box, sortakinda with 8 slots set to salvage in the top left inventory
 -- Simpletweaks with the tweaks Estate List Command and fix '/target' command enabled
 
 -- Only supports 8 characters because i didn't need any more
