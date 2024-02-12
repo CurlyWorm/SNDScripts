@@ -105,7 +105,7 @@ for _, char in ipairs(chars) do
     yield("/pcall SelectYesno false 0")
     yield("/wait 4.0")
     
-    -- Buying from apartment
+    -- Buying from apartment mannequin
     yield(confirmbutton)
     yield("/wait 0.5")
     yield(confirmbutton)
