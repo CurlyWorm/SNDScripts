@@ -1,6 +1,5 @@
--- Required plugins: Lifestream, Autoretainer, Pandora's box
--- Simpletweaks with the tweaks Estate List Command and
--- fix '/target' command enabled
+-- Required plugins: Lifestream, Autoretainer, Pandora's box, sortakinda and
+-- Simpletweaks with the tweaks Estate List Command and fix '/target' command enabled
 
 -- Only supports 8 characters because i didn't need any more
 -- going above that will probably just end script
