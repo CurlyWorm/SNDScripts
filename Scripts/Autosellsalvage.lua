@@ -140,7 +140,7 @@ for _, char in ipairs(chars) do
         yield("/tp free company")
         yield("/wait 10")
     else
-        yield("/lifestream")
+        yield("/li")
         yield("/wait 30")
         yield("/tp free company")
         yield("/wait 10")
