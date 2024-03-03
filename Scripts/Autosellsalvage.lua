@@ -2,7 +2,7 @@
 -- Simpletweaks with the tweaks Estate List Command and fix '/target' command enabled
 -- Apartment also needs the mannequin right inside the door so you can use the confirm button to interact with it
 
--- Only supports 8 characters because i didn't need any more
+-- Only supports up to 8 characters because i didn't need any more
 -- going above that will just cause characters to login and then not actually sell anything
 
 -- Change apartmentnumber to your apartment number
